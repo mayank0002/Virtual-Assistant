@@ -1,7 +1,12 @@
-import axios from "axios"
-const geminiResponse=async (command,assistantName,userName)=>{
-try {
-    const apiUrl=process.env.GEMINI_API_URL
+import axios from "axios";
+const geminiResponse = async (command, assistantName, userName) => {
+  try {
+    //const apiUrl = process.env.GEMINI_API_URL;
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+    const GEMINI_MODEL = process.env.GEMINI_MODEL;
+
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+
     const prompt = `You are a virtual assistant named ${assistantName} created by ${userName}. 
 You are not Google. You will now behave like a voice-enabled assistant.
 
@@ -42,19 +47,18 @@ Important:
 now your userInput- ${command}
 `;
 
+    const result = await axios.post(apiUrl, {
+      contents: [
+        {
+          parts: [{ text: prompt }],
+        },
+      ],
+    });
+    return result.data.candidates[0].content.parts[0].text;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+export default geminiResponse;
 
-
-
-    const result=await axios.post(apiUrl,{
-    "contents": [{
-    "parts":[{"text": prompt}]
-    }]
-    })
-return result.data.candidates[0].content.parts[0].text
-} catch (error) {
-    console.log(error)
-}
-}
-
-export default geminiResponse
