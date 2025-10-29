@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -r --parallel --filter='./apps/*' run dev"
+    "dev": "pnpm -r --parallel dev"
   },
   "repository": {
     "type": "git",
