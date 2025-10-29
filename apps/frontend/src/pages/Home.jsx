@@ -70,6 +70,8 @@ function Home() {
   const handleCommand = (data) => {
     const { type, userInput, response } = data;
     speak(response);
+    console.log({type});
+    
 
     if (type === "google-search") {
       const query = encodeURIComponent(userInput);

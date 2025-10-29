@@ -21,7 +21,7 @@ Your task is to understand the user's natural language input and respond with a 
 }
 
 Instructions:
-- "type": determine the intent of the user.
+- "type": determine the intent of the user. Make sure to provide one of the type I mentioned below, no other irrelevant type must be there in the response
 - "userinput": original sentence the user spoke.
 - "response": A short voice-friendly reply, e.g., "Sure, playing it now", "Here's what I found", "Today is Tuesday", etc.
 
