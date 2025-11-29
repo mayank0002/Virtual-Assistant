@@ -54,7 +54,7 @@ now your userInput- ${command}
         },
       ],
     });
-    return result.data.candidates[0].content.parts[0].text;
+    return result.data.candidates[0].content.parts[0].text || '';
   } catch (error) {
     console.log(error);
   }

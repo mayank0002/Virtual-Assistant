@@ -104,6 +104,7 @@ export const askToAssistant = async (req, res) => {
           .json({ response: "I didn't understand that command." });
     }
   } catch (error) {
+    console.log('ERROR----', error)
     return res.status(500).json({ response: "ask assistant error" });
   }
 };
