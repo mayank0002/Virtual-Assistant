@@ -20,7 +20,8 @@ app.use(
 );
 const port = process.env.PORT || 5000;
 app.use(express.json());
-app.use(cookieParser());
+// Use the same secret variable you use for signing tokens (e.g., JWT_SECRET or COOKIE_SECRET)
+app.use(cookieParser(process.env.JWT_SECRET));
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 
@@ -28,6 +29,7 @@ app.listen(port, () => {
   connectDb();
   console.log("server started");
 });
+
 
 
 
