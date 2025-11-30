@@ -13,7 +13,7 @@ import geminiResponse from "./gemini.js";
 const app = express();
 app.use(
   cors({
-    origin: "https://virtual-assistant-tc59.onrender.com",
+    origin: "https://ai-assistant-mwek.onrender.com",
     credentials: true,
   }),
 );
@@ -27,4 +27,5 @@ app.listen(port, () => {
   connectDb();
   console.log("server started");
 });
+
 
