@@ -24,7 +24,7 @@ try {
     res.cookie("token",token,{
         httpOnly:true,
        maxAge:7*24*60*60*1000,
-       sameSite:"None",
+       sameSite:"restrict",
        secure:true
     })
 
@@ -54,7 +54,7 @@ try {
     res.cookie("token",token,{
         httpOnly:true,
        maxAge:7*24*60*60*1000,
-       sameSite:"None",
+       sameSite:"restrict",
        secure:true
     })
 
@@ -75,3 +75,4 @@ export const logOut=async (req,res)=>{
 }
 
         
+
