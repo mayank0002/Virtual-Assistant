@@ -11,6 +11,7 @@ import userRouter from "./routes/user.routes.js";
 import geminiResponse from "./gemini.js";
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(
   cors({
     origin: "https://ai-assistant-mwek.onrender.com",
@@ -27,6 +28,7 @@ app.listen(port, () => {
   connectDb();
   console.log("server started");
 });
+
 
 
 
