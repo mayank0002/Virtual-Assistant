@@ -22,6 +22,7 @@ try {
     const token=await genToken(user._id)
 
     res.cookie("token",token,{
+        path: "/",
         httpOnly:true,
        maxAge:7*24*60*60*1000,
        sameSite:"none",
@@ -52,6 +53,7 @@ try {
     const token=await genToken(user._id)
 
     res.cookie("token",token,{
+        path: "/",
         httpOnly:true,
        maxAge:7*24*60*60*1000,
        sameSite:"none",
@@ -75,6 +77,7 @@ export const logOut=async (req,res)=>{
 }
 
         
+
 
 
 
