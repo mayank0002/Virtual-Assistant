@@ -6,7 +6,7 @@ export const userDataContext = createContext();
 
 function UserContext({ children }) {
   console.log(import.meta.env);
-  const serverUrl = "https://virtual-assistant-backend-zen0.onrender.com";
+  const serverUrl = "https://virtual-assistant-eouu.onrender.com";
   const [userData, setUserData] = useState(null);
   const [frontendImage, setFrontendImage] = useState(null);
   const [backendImage, setBackendImage] = useState(null);
@@ -61,4 +61,5 @@ function UserContext({ children }) {
 }
 
 export default UserContext;
+
 
